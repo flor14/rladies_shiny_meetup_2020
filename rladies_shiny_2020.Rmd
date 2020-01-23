@@ -126,7 +126,11 @@ class: inverse, center, middle
 
 # UI
 
+---
 
+```{r mamus, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("mamu_4.png")
+```
 ---
 
 # Layout
@@ -145,7 +149,7 @@ knitr::include_graphics("layout.png")
 class: center, middle
 
 ```{r init5, echo=FALSE, fig.align="center", out.width='100%'}
-knitr::include_graphics("slide1_mamu.png")
+knitr::include_graphics("slide_mamu1.png")
 ```
 
 Ui <- fluidPage(sidebarLayout(sidebarPanel(…), mainPanel(…))
@@ -165,7 +169,7 @@ knitr::include_graphics("inputs.png")
 class: center, middle
 
 ```{r radiobut, echo=FALSE, fig.align="center", out.width='90%'}
-knitr::include_graphics("slide2_mamu.png")
+knitr::include_graphics("slide_mamu2.png")
 ```
 
 Ui <- fluidPage(sidebarLayout(sidebarPanel(radioButtons(…)), mainPanel(…))
