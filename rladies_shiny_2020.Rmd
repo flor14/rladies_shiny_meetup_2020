@@ -1,6 +1,6 @@
 ---
 title: "Interactive Webapps 💻 with Shiny💫"
-subtitle: "R-Ladies Rcia - Ctes + R en el NEA Meetup"
+subtitle: "ss"
 author: "Florencia D'Andrea (🐦cantoflor_87) "
 institute: "R-Ladies Buenos Aires / R en BAires"
 date: "21/02/2020"
@@ -85,6 +85,10 @@ knitr::include_graphics("snippet_2.png")
 
 # Building a shiny app
 
+```{r shiny, echo=FALSE, fig.align="center", out.width='50%'}
+knitr::include_graphics("cheat1.png")
+```
+
 .pull-left[
 
 **UI**
@@ -122,15 +126,14 @@ knitr::include_graphics("snippet_2.png")
 
 ---
 
-class: inverse, center, middle
+class: center, middle
 
-# UI
-
----
+# User Interfase (UI)
 
 ```{r mamus, echo=FALSE, fig.align="center", out.width='90%'}
-knitr::include_graphics("mamu_4.png")
+knitr::include_graphics("mamu_4.jpg")
 ```
+
 ---
 
 # Layout
@@ -164,6 +167,7 @@ Collect values from the user
 knitr::include_graphics("inputs.png")
 ```
 
+.footnote[Source: Shiny RStudio Cheatsheet.]
 ---
 
 class: center, middle
@@ -190,6 +194,7 @@ radioButtons(inputId,
              choiceValues = NULL)
 
 ```
+
 ---
 
 class: center, middle
@@ -202,9 +207,17 @@ knitr::include_graphics("parentesis.png")
 
 ---
 
+class: center, middle
+
+```{r adentro, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("mamu_8_sd.png")
+```
+
+---
+
 # Selecting arguments
 
-Selecting the parameters
+
 
 ```{r eval=FALSE, tidy=FALSE}
 
@@ -253,7 +266,14 @@ class: inverse
 
 class: inverse, center, middle
 
-# Server
+# Reactivity
+
+---
+
+```{r reactserv, echo=FALSE, fig.align="center", out.width='40%'}
+knitr::include_graphics("server_react.png")
+```
+
 
 ---
 
@@ -267,8 +287,52 @@ knitr::include_graphics("outputs.png")
 
 ---
 
+# Plot
 
-# Add an image
+```{r echo=TRUE, tidy=FALSE, fig.align="center", out.width='90%'}
+library(ggplot2)
+
+ggplot(data = mpg)+
+  geom_point(mapping = aes(x = displ,
+                           y = hwy,
+                           color = cty))
+```
+
+---
+
+```{r mamu3, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("slide_mamu3.png")
+```
+
+
+---
+
+# in UI
+
+
+```{r eval=FALSE, tidy=FALSE}
+ui<- fluidPage(
+          sidebarLayout(
+                sidebarPanel(radioButtons("Vx",
+                                          "Eje X",
+                                          selected = "displ",
+                                          choices= c("Millas de autopista por galon"="hwy", "Millas de ciudad por galon"="cty", "Cilindrada del motor (L)"="displ"))),
+                mainPanel()))
+
+```
+
+# in server
+
+```{r eval=FALSE, tidy=FALSE}
+
+output$plot <- renderPlot({    
+ggplot(data = mpg) + 
+  geom_point(mapping = aes_string(x = input$Vx,
+                                  y = input$Vy,
+                                  color= input$class)))
+ })
+```
+
 
 
 ---
@@ -280,8 +344,35 @@ class: inverse, center, middle
 
 ---
 
+```{r eval=FALSE, tidy=FALSE}
+ui<- fluidPage(theme = shinytheme("lumen"), #<<
+               h1(strong("Rladies Buenos Aires")), #<<
+               h4(em("Taller de Ciencia de Datos")), #<<
+     sidebarLayout( sidebarPanel( radioButtons(…) ),
+                                  mainPanel(… ))
+
+```
+
+---
+
+```{r header, echo=FALSE, fig.align="center", out.width='50%'}
+knitr::include_graphics("header.png")
+```
+
+.footnote[Source: Shiny RStudio Cheatsheet.]
+---
+
 # Add an image
 
+To include an image
+1. Place the file in the www subdirectory
+1. Link to it with  `img(src="<file name>")`
+
+`img(src='rladies.png', width = 200)`
+
+```{r hopña, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("structure.png")
+```
 
 ---
 
