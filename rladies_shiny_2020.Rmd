@@ -399,12 +399,14 @@ class: inverse
 
 # Links
  
+- [Mastering Shiny](https://mastering-shiny.org/)
+ 
 - [Shiny's Holy Grail - UseR! 2019 - Joe Cheng  video](https://www.youtube.com/watch?v=5KByRC6eqC8) 
 
 - [Tutorial R-Studio](https://shiny.rstudio.com/tutorial)
 
 
-![](https://media.giphy.com/media/3oEjHWPTo7c0ajPwty/giphy.gif)
+
 
 
 ---
@@ -444,6 +446,8 @@ class: inverse
 class: center, middle
 
 # Thanks!
+
+![](https://media.giphy.com/media/3oEjHWPTo7c0ajPwty/giphy.gif)
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
 
