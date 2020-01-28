@@ -1,7 +1,7 @@
 ---
 title: "Interactive Webapps 💻 with Shiny💫"
-subtitle: "ss"
-author: "Florencia D'Andrea (🐦cantoflor_87) "
+subtitle: "Florencia D'Andrea (🐦cantoflor_87) "
+author: ""
 institute: "R-Ladies Buenos Aires / R en BAires"
 date: "21/02/2020"
 output:
@@ -93,7 +93,7 @@ knitr::include_graphics("cheat1.png")
 
 **UI**
 
-1. Add the snippet into an app.R script
+1. Add the template -> ***app.R*** 
 
 1. Select a layout function 
 
@@ -105,11 +105,11 @@ knitr::include_graphics("cheat1.png")
 
 **Server**
 
-1. Refer to outputs with ```output$<id>```
+1. Select `render*()` and `*Output()` functions 
 
-1. Refer to inputs with ```input$<id>```
+1. Refer to outputs with `output$<id>`
 
-1. Wrap code in a ```render*()``` function before saving to output
+1. Refer to inputs with `input$<id>`
 
 ]
 
@@ -122,7 +122,9 @@ knitr::include_graphics("cheat1.png")
 
 # Cheatsheet
 
-
+```{r rstudio, echo=FALSE, fig.align="center", out.width='70%'}
+knitr::include_graphics("rstudio_cheat.png")
+```
 
 ---
 
@@ -217,8 +219,6 @@ knitr::include_graphics("mamu_8_sd.png")
 
 # Selecting arguments
 
-
-
 ```{r eval=FALSE, tidy=FALSE}
 
 radioButtons(inputId = "Vx", #<<
@@ -253,33 +253,57 @@ class: inverse
 
 # Live coding #1 🙌⌨
 
-* Add Shiny snippet
+* Add the Shinyapp template
 
 * Select one layout and one input
 
 * Run the App
 
-
--> You can use the cheatsheet as help
-
 ---
 
-class: inverse, center, middle
+class: center, middle
 
 # Reactivity
+
+
+```{r title_react, echo=FALSE, fig.align="center", out.width='100%'}
+knitr::include_graphics("mamu_2.png")
+```
+
 
 ---
 
 ```{r reactserv, echo=FALSE, fig.align="center", out.width='40%'}
 knitr::include_graphics("server_react.png")
 ```
+.pull-left[
 
+**UI**
+
+1. Add the template -> ***app.R*** 
+
+1. Select a layout function 
+
+1. Select Inputs and place them
+
+]
+
+.pull-right[
+
+**Reactivity**
+
+1. Select `render*()` and `*Output()` functions
+
+1. Refer to outputs with `output$<id>`
+
+1. Refer to inputs with `input$<id>`
+
+]
 
 ---
 
-# Output
+# `render*()` and `*Output()` functions work together to add R output to the UI
 
-```render*()``` and ```*Output()``` functions work together to add R output to the UI
 
 ```{r out, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("outputs.png")
@@ -289,7 +313,7 @@ knitr::include_graphics("outputs.png")
 
 # Plot
 
-```{r echo=TRUE, tidy=FALSE, fig.align="center", out.width='90%'}
+```{r plot1, echo=TRUE, fig.align="center", out.width='90%', tidy=FALSE}
 library(ggplot2)
 
 ggplot(data = mpg)+
@@ -300,39 +324,42 @@ ggplot(data = mpg)+
 
 ---
 
-```{r mamu3, echo=FALSE, fig.align="center", out.width='90%'}
-knitr::include_graphics("slide_mamu3.png")
+# Refer to inputs with `input$<id>`
+
+```{r react, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("reactivity.png")
 ```
 
+---
+# Refer to inputs with ```input$<id>```
+
+```{r react2, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("reactivity3.png")
+```
 
 ---
 
-# in UI
+# Refer to outputs with `output$<id>`
 
+```{r react3, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("reactivity.png")
+```
+---
 
-```{r eval=FALSE, tidy=FALSE}
-ui<- fluidPage(
-          sidebarLayout(
-                sidebarPanel(radioButtons("Vx",
-                                          "Eje X",
-                                          selected = "displ",
-                                          choices= c("Millas de autopista por galon"="hwy", "Millas de ciudad por galon"="cty", "Cilindrada del motor (L)"="displ"))),
-                mainPanel()))
+# Refer to outputs with `output$<id>`
 
+Observe `render*()` and `*Output()` functions!
+
+```{r react4, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("reactivity_plot.png")
 ```
 
-# in server
+---
 
-```{r eval=FALSE, tidy=FALSE}
 
-output$plot <- renderPlot({    
-ggplot(data = mpg) + 
-  geom_point(mapping = aes_string(x = input$Vx,
-                                  y = input$Vy,
-                                  color= input$class)))
- })
+```{r mamu3, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("slide_mamu3.png")
 ```
-
 
 
 ---
@@ -344,16 +371,20 @@ class: inverse, center, middle
 
 ---
 
+# Add a Title
+
 ```{r eval=FALSE, tidy=FALSE}
 ui<- fluidPage(theme = shinytheme("lumen"), #<<
-               h1(strong("Rladies Buenos Aires")), #<<
-               h4(em("Taller de Ciencia de Datos")), #<<
+               h1(strong("R-Ladies Buenos Aires")), #<<
+               h4(em("Shiny meetup")), #<<
      sidebarLayout( sidebarPanel( radioButtons(…) ),
                                   mainPanel(… ))
 
 ```
 
 ---
+
+# Format
 
 ```{r header, echo=FALSE, fig.align="center", out.width='50%'}
 knitr::include_graphics("header.png")
@@ -362,21 +393,37 @@ knitr::include_graphics("header.png")
 .footnote[Source: Shiny RStudio Cheatsheet.]
 ---
 
-# Add an image
+# Include an image
 
-To include an image
-1. Place the file in the www subdirectory
+1. Place the file in the ***www*** subdirectory
 1. Link to it with  `img(src="<file name>")`
 
-`img(src='rladies.png', width = 200)`
+
 
 ```{r hopña, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("structure.png")
 ```
 
+`img(src='rladies.png', width = 200)`
+
 ---
 
-# Format
+
+---
+
+class: inverse
+
+# Live coding #2
+
+* Server
+
+* Reactivity
+
+* Run the app
+
+---
+
+# Repo
 
 
 ---
@@ -427,19 +474,7 @@ class: inverse, center, middle
 
 <a href="https://github.com/rladies/meetup-presentations_buenosaires"><i class="fa fa-github fa-fw"></i>&nbsp; @meetup-presentations_buenosaires</a>
 
----
 
-class: inverse
-
-# Live coding #2
-
-* Add Shiny snippet
-
-* Select one layout and one input
-
-* Run the App
-
--> You can use the cheatsheet as help
 
 ---
 

@@ -91,7 +91,7 @@ You can insert all the code at once with the shinyapp snippet
 
 **UI**
 
-1. Add the snippet into an app.R script
+1. Add the template -&gt; ***app.R*** 
 
 1. Select a layout function 
 
@@ -103,11 +103,11 @@ You can insert all the code at once with the shinyapp snippet
 
 **Server**
 
-1. Refer to outputs with ```output$&lt;id&gt;```
+1. Select `render*()` and `*Output()` functions 
 
-1. Refer to inputs with ```input$&lt;id&gt;```
+1. Refer to outputs with `output$&lt;id&gt;`
 
-1. Wrap code in a ```render*()``` function before saving to output
+1. Refer to inputs with `input$&lt;id&gt;`
 
 ]
 
@@ -120,7 +120,7 @@ You can insert all the code at once with the shinyapp snippet
 
 # Cheatsheet
 
-
+&lt;img src="rstudio_cheat.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -202,8 +202,6 @@ class: center, middle
 # Selecting arguments
 
 
-
-
 ```r
 *radioButtons(inputId = "Vx",
 *            label = "X",
@@ -236,31 +234,53 @@ class: inverse
 
 # Live coding #1 🙌⌨
 
-* Add Shiny snippet
+* Add the Shinyapp template
 
 * Select one layout and one input
 
 * Run the App
 
-
--&gt; You can use the cheatsheet as help
-
 ---
 
-class: inverse, center, middle
+class: center, middle
 
 # Reactivity
+
+
+&lt;img src="mamu_2.png" width="100%" style="display: block; margin: auto;" /&gt;
+
 
 ---
 
 &lt;img src="server_react.png" width="40%" style="display: block; margin: auto;" /&gt;
+.pull-left[
 
+**UI**
+
+1. Add the template -&gt; ***app.R*** 
+
+1. Select a layout function 
+
+1. Select Inputs and place them
+
+]
+
+.pull-right[
+
+**Reactivity**
+
+1. Select `render*()` and `*Output()` functions
+
+1. Refer to outputs with `output$&lt;id&gt;`
+
+1. Refer to inputs with `input$&lt;id&gt;`
+
+]
 
 ---
 
-# Output
+# `render*()` and `*Output()` functions work together to add R output to the UI
 
-```render*()``` and ```*Output()``` functions work together to add R output to the UI
 
 &lt;img src="outputs.png" width="90%" style="display: block; margin: auto;" /&gt;
 
@@ -278,41 +298,36 @@ ggplot(data = mpg)+
                            color = cty))
 ```
 
-&lt;img src="rladies_shiny_2020_files/figure-html/unnamed-chunk-5-1.png" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="rladies_shiny_2020_files/figure-html/plot1-1.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
+
+# Refer to inputs with `input$&lt;id&gt;`
+
+&lt;img src="reactivity.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+# Refer to inputs with ```input$&lt;id&gt;```
+
+&lt;img src="reactivity3.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Refer to outputs with `output$&lt;id&gt;`
+
+&lt;img src="reactivity.png" width="90%" style="display: block; margin: auto;" /&gt;
+---
+
+# Refer to outputs with `output$&lt;id&gt;`
+
+Observe `render*()` and `*Output()` functions!
+
+&lt;img src="reactivity_plot.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+
 
 &lt;img src="slide_mamu3.png" width="90%" style="display: block; margin: auto;" /&gt;
-
-
----
-
-# in UI
-
-
-
-```r
-ui&lt;- fluidPage(
-          sidebarLayout(
-                sidebarPanel(radioButtons("Vx",
-                                          "Eje X",
-                                          selected = "displ",
-                                          choices= c("Millas de autopista por galon"="hwy", "Millas de ciudad por galon"="cty", "Cilindrada del motor (L)"="displ"))),
-                mainPanel()))
-```
-
-# in server
-
-
-```r
-output$plot &lt;- renderPlot({    
-ggplot(data = mpg) + 
-  geom_point(mapping = aes_string(x = input$Vx,
-                                  y = input$Vy,
-                                  color= input$class)))
- })
-```
-
 
 
 ---
@@ -324,35 +339,55 @@ class: inverse, center, middle
 
 ---
 
+# Add a Title
+
 
 ```r
 *ui&lt;- fluidPage(theme = shinytheme("lumen"),
-*              h1(strong("Rladies Buenos Aires")),
-*              h4(em("Taller de Ciencia de Datos")),
+*              h1(strong("R-Ladies Buenos Aires")),
+*              h4(em("Shiny meetup")),
      sidebarLayout( sidebarPanel( radioButtons(…) ),
                                   mainPanel(… ))
 ```
 
 ---
 
+# Format
+
 &lt;img src="header.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 .footnote[Source: Shiny RStudio Cheatsheet.]
 ---
 
-# Add an image
+# Include an image
 
-To include an image
-1. Place the file in the www subdirectory
+1. Place the file in the ***www*** subdirectory
 1. Link to it with  `img(src="&lt;file name&gt;")`
 
-`img(src='rladies.png', width = 200)`
+
 
 &lt;img src="structure.png" width="90%" style="display: block; margin: auto;" /&gt;
 
+`img(src='rladies.png', width = 200)`
+
 ---
 
-# Format
+
+---
+
+class: inverse
+
+# Live coding #2
+
+* Add Shiny template
+
+* Select one layout and one input
+
+* Run the App
+
+-&gt; You can use the cheatsheet as help
+
+# Repo
 
 
 ---
@@ -403,19 +438,7 @@ class: inverse, center, middle
 
 &lt;a href="https://github.com/rladies/meetup-presentations_buenosaires"&gt;&lt;i class="fa fa-github fa-fw"&gt;&lt;/i&gt;&amp;nbsp; @meetup-presentations_buenosaires&lt;/a&gt;
 
----
 
-class: inverse
-
-# Live coding #2
-
-* Add Shiny snippet
-
-* Select one layout and one input
-
-* Run the App
-
--&gt; You can use the cheatsheet as help
 
 ---
 
