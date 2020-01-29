@@ -123,15 +123,11 @@ You can insert all the code at once with the shinyapp snippet
 
 # Cheatsheet
 
-<<<<<<< HEAD
 
 &lt;img src="cheatsheet.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 .footnote[Source: https://shiny.rstudio.com/articles/cheatsheet.html]
 
-=======
-&lt;img src="rstudio_cheat.png" width="70%" style="display: block; margin: auto;" /&gt;
->>>>>>> 928a1189f8a3700fefd55232d897f59e21ebc45a
 
 ---
 
@@ -209,7 +205,6 @@ class: inverse
 
 # Live coding #1 🙌💻
 
-<<<<<<< HEAD
 * Add the Shinyapp template
 
 * Select one layout and one input
@@ -218,15 +213,6 @@ class: inverse
 
 
 ➡️📁 Rladies_app
-=======
-```r
-*radioButtons(inputId = "Vx",
-*            label = "X",
-             choices = c("Millas de autopista por galon" = "hwy",
-                         "Millas de ciudad por galon" = "cty", 
-                         "Cilindrada del motor (L)" = "displ"))
-```
->>>>>>> 928a1189f8a3700fefd55232d897f59e21ebc45a
 
 ---
 
@@ -241,19 +227,15 @@ class: center, middle
 ---
 
 &lt;img src="server_react.png" width="40%" style="display: block; margin: auto;" /&gt;
+
 .pull-left[
 
-<<<<<<< HEAD
 **UI**
-=======
-* Add the Shinyapp template
->>>>>>> 928a1189f8a3700fefd55232d897f59e21ebc45a
 
 1. Add the template -&gt; ***app.R*** 
 
 1. Select a layout function 
 
-<<<<<<< HEAD
 1. Select Inputs and place them
 
 ]
@@ -261,15 +243,9 @@ class: center, middle
 .pull-right[
 
 **Reactivity**
-=======
----
-
-class: center, middle
->>>>>>> 928a1189f8a3700fefd55232d897f59e21ebc45a
 
 1. Select `render*()` and `*Output()` functions
 
-<<<<<<< HEAD
 1. Refer to outputs with `output$&lt;id&gt;`
 
 1. Refer to inputs with `input$&lt;id&gt;`
@@ -279,42 +255,6 @@ class: center, middle
 ---
 
 # `render*()` and `*Output()` functions 
-=======
-
-&lt;img src="mamu_2.png" width="100%" style="display: block; margin: auto;" /&gt;
-
-
----
-
-&lt;img src="server_react.png" width="40%" style="display: block; margin: auto;" /&gt;
-.pull-left[
-
-**UI**
-
-1. Add the template -&gt; ***app.R*** 
-
-1. Select a layout function 
-
-1. Select Inputs and place them
-
-]
-
-.pull-right[
-
-**Reactivity**
-
-1. Select `render*()` and `*Output()` functions
-
-1. Refer to outputs with `output$&lt;id&gt;`
-
-1. Refer to inputs with `input$&lt;id&gt;`
-
-]
-
----
-
-# `render*()` and `*Output()` functions work together to add R output to the UI
->>>>>>> 928a1189f8a3700fefd55232d897f59e21ebc45a
 
 
 &lt;img src="outputs.png" width="90%" style="display: block; margin: auto;" /&gt;
@@ -333,11 +273,7 @@ ggplot(data = mpg)+
                            color = class))
 ```
 
-<<<<<<< HEAD
-&lt;img src="rladies_shiny_2020_files/figure-html/plot1-1.png" width="50%" style="display: block; margin: auto;" /&gt;
-=======
-&lt;img src="rladies_shiny_2020_files/figure-html/plot1-1.png" width="90%" style="display: block; margin: auto;" /&gt;
->>>>>>> 928a1189f8a3700fefd55232d897f59e21ebc45a
+&lt;img src="rladies_shiny_2020_files/figure-html/plot1-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -346,7 +282,8 @@ ggplot(data = mpg)+
 &lt;img src="reactivity.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
-# Refer to inputs with ```input$&lt;id&gt;```
+
+# Refer to inputs with `input$&lt;id&gt;`
 
 &lt;img src="reactivity3.png" width="90%" style="display: block; margin: auto;" /&gt;
 
@@ -355,46 +292,33 @@ ggplot(data = mpg)+
 # Refer to outputs with `output$&lt;id&gt;`
 
 &lt;img src="reactivity.png" width="90%" style="display: block; margin: auto;" /&gt;
+
 ---
 
 # Refer to outputs with `output$&lt;id&gt;`
 
 Observe `render*()` and `*Output()` functions!
-<<<<<<< HEAD
 
 &lt;img src="reactivity_plot.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-=======
-
-&lt;img src="reactivity_plot.png" width="90%" style="display: block; margin: auto;" /&gt;
-
----
->>>>>>> 928a1189f8a3700fefd55232d897f59e21ebc45a
-
 &lt;img src="slide_mamu3.png" width="90%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="slide_mamu3.png" width="90%" style="display: block; margin: auto;" /&gt;
-
 
 ---
 
-class: inverse, center, middle
+class: center, middle
 
 # Extras
 
 
-
-&lt;img src="mamu_1.jpg" width="90%" style="display: block; margin: auto;" /&gt;
-
-
+&lt;img src="mamu_1.jpg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # Add a Theme
 
-&lt;img src="shinythemes.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="shinythemes.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -416,6 +340,7 @@ class: inverse, center, middle
 &lt;img src="header.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 .footnote[Source: Shiny RStudio Cheatsheet.]
+
 ---
 
 # Include an image
@@ -423,10 +348,6 @@ class: inverse, center, middle
 1. Place the file in the ***www*** subdirectory
 1. Link to it with  `img(src="&lt;file name&gt;")`
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 928a1189f8a3700fefd55232d897f59e21ebc45a
 
 &lt;img src="structure.png" width="90%" style="display: block; margin: auto;" /&gt;
 
@@ -434,30 +355,11 @@ class: inverse, center, middle
 
 ---
 
-<<<<<<< HEAD
 class: inverse
 
 # Live coding #2 🙌💻
 
 * Server
-=======
-
----
-
-class: inverse
-
-# Live coding #2
-
-* Add Shiny template
-
-* Select one layout and one input
-
-* Run the App
-
--&gt; You can use the cheatsheet as help
-
-# Repo
->>>>>>> 928a1189f8a3700fefd55232d897f59e21ebc45a
 
 * Reactivity
 
@@ -469,8 +371,8 @@ class: inverse
 ---
 
 class: inverse, center, middle
-# Repo
 
+# Repo
 
 https://github.com/flor14/rladies_shiny_meetup
 
@@ -494,11 +396,11 @@ class: inverse, center, middle
 
 # Links
  
-- [Mastering Shiny](https://mastering-shiny.org/)
+ [Mastering Shiny](https://mastering-shiny.org/)
  
-- [Shiny's Holy Grail - UseR! 2019 - Joe Cheng  video](https://www.youtube.com/watch?v=5KByRC6eqC8) 
+ [Shiny's Holy Grail - UseR! 2019 - Joe Cheng  video](https://www.youtube.com/watch?v=5KByRC6eqC8) 
 
-- [Tutorial R-Studio](https://shiny.rstudio.com/tutorial)
+ [Tutorial R-Studio](https://shiny.rstudio.com/tutorial)
 
 
 ---
