@@ -151,8 +151,7 @@ knitr::include_graphics("mamu_4.jpg")
 
 # Layout
 
-Organize panels and elements into a layout with a
-**layout function**
+Organize panels and elements into a layout with a **layout function**
 
 ```{r init3, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("layout.png")
@@ -213,6 +212,31 @@ class: center, middle
 
 ```{r init7, echo=FALSE, fig.align="center", out.width='90%'}
 knitr::include_graphics("parentesis.png")
+```
+
+---
+
+class: center, middle
+
+# ⚠️ Warning!  
+
+Families can be complex
+
+```{r families, echo=FALSE, fig.align="center", out.width='70%'}
+
+knitr::include_graphics("complex.jpg")
+
+```
+
+
+---
+
+class: center, middle
+
+```{r ini3, echo=FALSE, fig.align="center", out.width='90%'}
+
+knitr::include_graphics("closing_par.png")
+
 ```
 
 ---
