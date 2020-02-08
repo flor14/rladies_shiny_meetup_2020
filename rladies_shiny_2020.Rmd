@@ -398,11 +398,8 @@ ui<- fluidPage(theme = shinytheme("lumen"), #<<
 
 ```
 
----
 
-# Format
-
-```{r header, echo=FALSE, fig.align="center", out.width='50%'}
+# Formaheader, echo=FALSE, fig.align="center", out.width='50%'}
 knitr::include_graphics("header.png")
 ```
 
@@ -420,7 +417,7 @@ knitr::include_graphics("header.png")
 knitr::include_graphics("structure.png")
 ```
 
-`img(src='rladies.png', width = 200)`
+
 
 ---
 
@@ -443,7 +440,7 @@ class: inverse, center, middle
 
 # Repo
 
-https://github.com/flor14/rladies_shiny_meetup
+https://github.com/flor14/rladies_shiny_meetup_2020
 
 ![](https://media.giphy.com/media/X8HbeXDF7nzaM/200w_d.gif)
 
