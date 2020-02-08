@@ -2,7 +2,7 @@ library("shiny")
 library("tidyverse")
 library("ggplot2")
 library("shinythemes")
-mpg
+
 ui<- fluidPage(theme = shinytheme("lumen"), 
                h1(strong("R-Ladies Buenos Aires")),
                h4(em("My first ShinyApp")),
