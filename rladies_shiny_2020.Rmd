@@ -2,8 +2,7 @@
 title: "Interactive Webapps 💻 with Shiny ✨"
 subtitle: 
 author: "Florencia D'Andrea (🐦cantoflor_87)"
-institute: "R-Ladies Buenos Aires / R en BAires"
-date: "21/02/2020"
+institute: "R-Meetup Ladies BuRcia-Ctes + en BAel NEAdate: "21/02/2020"
 output:
   xaringan::moon_reader:
     css: ["default", "rladies", "rladies-fonts"]
@@ -317,7 +316,7 @@ knitr::include_graphics("outputs.png")
 
 # Plot
 
-```{r plot1, echo=TRUE, fig.align="center", tidy=FALSE}
+```{r plot1, echo=TRUE, fig.width=7, fig.height=5, fig.align = "center" }
 library(ggplot2)
 
 ggplot(data = mpg)+
@@ -399,7 +398,7 @@ ui<- fluidPage(theme = shinytheme("lumen"), #<<
 ```
 
 
-# Formaheader, echo=FALSE, fig.align="center", out.width='50%'}
+```{r header_1, echo=FALSE, tidy=FALSE}
 knitr::include_graphics("header.png")
 ```
 
