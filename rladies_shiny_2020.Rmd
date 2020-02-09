@@ -2,7 +2,8 @@
 title: "Interactive Webapps 💻 with Shiny ✨"
 subtitle: 
 author: "Florencia D'Andrea (🐦cantoflor_87)"
-institute: "R-Meetup Ladies BuRcia-Ctes + en BAel NEAdate: "21/02/2020"
+institute: "R-Ladies Buenos Aires"
+date: "21/02/2020"
 output:
   xaringan::moon_reader:
     css: ["default", "rladies", "rladies-fonts"]
@@ -398,7 +399,7 @@ ui<- fluidPage(theme = shinytheme("lumen"), #<<
 ```
 
 
-```{r header_1, echo=FALSE, tidy=FALSE}
+```{r header_1, echo=FALSE, fig.align= "center", fig.height=3, fig.width=4}
 knitr::include_graphics("header.png")
 ```
 
@@ -432,6 +433,17 @@ class: inverse
 
 
 ➡️📁 Rladies_app
+
+---
+
+
+class: inverse, center, middle
+
+
+```{r finalapp, echo=FALSE, fig.align="center", out.width='90%'}
+knitr::include_graphics("appfinal.png")
+```
+
 
 ---
 
@@ -472,8 +484,6 @@ class: inverse, center, middle
 [Shinytest](https://rstudio.github.io/shinytest/articles/package.html)
 
 ---
-
-
 
 class: center, middle
 
